@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Services offered by Rayhan - Full-stack development, API development, system architecture, and DevOps solutions.">
+    <title>Services | Rayhan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="bg-dark-bg text-gray-100 antialiased page-transition">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-dark-surface/80 backdrop-blur-md border-b border-retro-teal/20">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-retro-teal font-pixel tracking-wider hover:text-retro-cyan transition-colors">
+                    &lt;RAYHAN/&gt;
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-retro-teal transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-retro-teal transition-colors">About</a>
+                    <a href="services.html" class="text-retro-teal hover:text-retro-cyan transition-colors font-medium">Services</a>
+                    <a href="projects.html" class="hover:text-retro-teal transition-colors">Projects</a>
+                    <a href="blog.html" class="hover:text-retro-teal transition-colors">Blog</a>
+                    <a href="contact.html" class="hover:text-retro-teal transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-toggle" class="md:hidden text-retro-teal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 hover:text-retro-teal transition-colors">Home</a>
+                <a href="about.html" class="block py-2 hover:text-retro-teal transition-colors">About</a>
+                <a href="services.html" class="block py-2 text-retro-teal">Services</a>
+                <a href="projects.html" class="block py-2 hover:text-retro-teal transition-colors">Projects</a>
+                <a href="blog.html" class="block py-2 hover:text-retro-teal transition-colors">Blog</a>
+                <a href="contact.html" class="block py-2 hover:text-retro-teal transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="section-container pt-32">
+        <div class="max-w-6xl mx-auto">
+            <!-- Page Header -->
+            <div class="text-center mb-16">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 font-pixel">
+                    <span class="text-retro-teal">S</span><span class="text-retro-cyan">E</span><span class="text-retro-emerald">R</span><span class="text-retro-indigo">V</span><span class="text-retro-purple">I</span><span class="text-retro-pink">C</span><span class="text-retro-teal">E</span><span class="text-retro-cyan">S</span>
+                </h1>
+                <div class="inline-block px-6 py-2 border-2 border-retro-teal/50 bg-dark-surface/50 backdrop-blur-sm">
+                    <p class="text-lg text-retro-teal font-pixel">What I Offer</p>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Full-Stack Development -->
+                <div class="manga-panel group hover:border-retro-teal/50 transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-retro-teal/20 border-2 border-retro-teal flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-3xl">🌐</span>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-retro-teal font-pixel mb-2">Full-Stack Development</h2>
+                            <p class="text-gray-400 text-sm">End-to-end web solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Complete web application development from concept to deployment. I build responsive, 
+                        performant applications using modern frameworks and best practices.
+                    </p>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-center">
+                            <span class="text-retro-teal mr-2">▸</span>
+                            Frontend & Backend Development
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-teal mr-2">▸</span>
+                            Database Design & Integration
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-teal mr-2">▸</span>
+                            Responsive UI/UX Design
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-teal mr-2">▸</span>
+                            Performance Optimization
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- API Development -->
+                <div class="manga-panel group hover:border-retro-indigo/50 transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-retro-indigo/20 border-2 border-retro-indigo flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-3xl">🔌</span>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-retro-indigo font-pixel mb-2">API Development</h2>
+                            <p class="text-gray-400 text-sm">RESTful & GraphQL APIs</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Robust, scalable API development for web and mobile applications. Well-documented, 
+                        secure, and optimized for performance.
+                    </p>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-center">
+                            <span class="text-retro-indigo mr-2">▸</span>
+                            RESTful API Design
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-indigo mr-2">▸</span>
+                            GraphQL Implementation
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-indigo mr-2">▸</span>
+                            Authentication & Security
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-indigo mr-2">▸</span>
+                            API Documentation
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- System Architecture -->
+                <div class="manga-panel group hover:border-retro-emerald/50 transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-retro-emerald/20 border-2 border-retro-emerald flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-3xl">🏗️</span>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-retro-emerald font-pixel mb-2">System Architecture</h2>
+                            <p class="text-gray-400 text-sm">Scalable & maintainable systems</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Design and implement scalable system architectures that grow with your business. 
+                        Focus on maintainability, performance, and future-proof solutions.
+                    </p>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-center">
+                            <span class="text-retro-emerald mr-2">▸</span>
+                            Microservices Architecture
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-emerald mr-2">▸</span>
+                            Cloud Infrastructure Design
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-emerald mr-2">▸</span>
+                            Scalability Planning
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-emerald mr-2">▸</span>
+                            System Optimization
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DevOps & Automation -->
+                <div class="manga-panel group hover:border-retro-purple/50 transition-all duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 bg-retro-purple/20 border-2 border-retro-purple flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-3xl">⚙️</span>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-retro-purple font-pixel mb-2">DevOps & Automation</h2>
+                            <p class="text-gray-400 text-sm">Streamlined workflows</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Automate deployment pipelines, set up CI/CD workflows, and manage infrastructure 
+                        to ensure smooth, reliable operations.
+                    </p>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-center">
+                            <span class="text-retro-purple mr-2">▸</span>
+                            CI/CD Pipeline Setup
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-purple mr-2">▸</span>
+                            Docker & Containerization
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-purple mr-2">▸</span>
+                            Cloud Deployment
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-retro-purple mr-2">▸</span>
+                            Monitoring & Logging
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="mt-16 text-center">
+                <div class="manga-panel max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-4 text-retro-teal font-pixel">Ready to Build Something Amazing?</h2>
+                    <p class="text-gray-300 mb-6">
+                        Let's discuss your project and bring your vision to life with clean code and thoughtful design.
+                    </p>
+                    <a href="contact.html" class="btn-primary inline-block">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-surface border-t border-retro-teal/20 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm mb-4">&copy; 2024 Rayhan. Built with passion and precision.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-retro-teal/70 hover:text-retro-teal transition-colors">GitHub</a>
+                <a href="#" class="text-retro-teal/70 hover:text-retro-teal transition-colors">LinkedIn</a>
+                <a href="#" class="text-retro-teal/70 hover:text-retro-teal transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
+

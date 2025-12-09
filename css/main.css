@@ -1,0 +1,478 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply border-gray-800;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-dark-bg text-gray-100;
+        font-family: 'Press Start 2P', 'Courier New', monospace;
+        font-size: 10px; /* Base font size for pixel font */
+        background-image: 
+            radial-gradient(circle at 20% 50%, rgba(0, 255, 209, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+    }
+
+    /* Mobile font size adjustments */
+    @media (max-width: 640px) {
+        body {
+            font-size: 8px;
+        }
+        
+        /* Reduce padding on mobile */
+        .manga-panel {
+            @apply p-4;
+        }
+        
+        /* Prevent text overflow */
+        h1, h2, h3 {
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* Better line height for pixel font on mobile */
+        p, span, a, button, li {
+            line-height: 1.6;
+        }
+        
+        /* Ensure buttons are touch-friendly */
+        button, a {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+    /* Tablet adjustments */
+    @media (min-width: 641px) and (max-width: 1024px) {
+        body {
+            font-size: 9px;
+        }
+    }
+
+    /* Halftone texture overlay */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        pointer-events: none;
+        opacity: 0.3;
+        z-index: 1;
+    }
+}
+
+@layer components {
+    /* Manga Panel Style */
+    .manga-panel {
+        @apply border-2 border-gray-700 bg-dark-card p-6 relative;
+        box-shadow: 
+            inset 0 0 0 1px rgba(0, 255, 209, 0.1),
+            0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .manga-panel::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            radial-gradient(circle, rgba(0,0,0,0.2) 1px, transparent 1px);
+        background-size: 8px 8px;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    /* Retro Glow Effect */
+    .retro-glow {
+        @apply transition-all duration-300;
+    }
+
+    .retro-glow:hover {
+        box-shadow: 
+            0 0 10px currentColor,
+            0 0 20px currentColor,
+            0 0 30px currentColor;
+    }
+
+    /* Terminal Cursor */
+    .terminal-cursor::after {
+        content: '_';
+        @apply text-retro-teal animate-cursor-blink;
+    }
+
+    /* Pixel Border */
+    .pixel-border {
+        border-image: 
+            linear-gradient(45deg, 
+                rgba(0, 255, 209, 0.5) 0%, 
+                rgba(99, 102, 241, 0.5) 50%, 
+                rgba(0, 255, 209, 0.5) 100%) 1;
+        border-width: 2px;
+        border-style: solid;
+    }
+
+    /* CRT Effect */
+    .crt-effect {
+        position: relative;
+    }
+
+    .crt-effect::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15) 0px,
+                transparent 1px,
+                transparent 2px,
+                rgba(0, 0, 0, 0.15) 3px
+            );
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    /* Section Container */
+    .section-container {
+        @apply container mx-auto px-4 py-12 sm:py-16 md:py-20;
+    }
+
+    /* Project Card */
+    .project-card {
+        @apply manga-panel relative overflow-hidden cursor-pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+        @apply transform -translate-y-2;
+        box-shadow: 
+            0 0 20px rgba(0, 255, 209, 0.3),
+            0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle, rgba(0, 255, 209, 0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .project-card:hover::after {
+        opacity: 1;
+    }
+
+    /* Blog Card */
+    .blog-card {
+        @apply manga-panel hover:border-retro-teal/50 transition-all duration-300;
+    }
+
+    /* Form Input */
+    .form-input {
+        @apply w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-surface border-2 border-gray-700 rounded-none 
+               text-gray-100 placeholder-gray-500 focus:outline-none focus:border-retro-teal 
+               transition-colors font-pixel text-sm sm:text-base;
+    }
+
+
+    .form-input:focus {
+        box-shadow: 0 0 10px rgba(0, 255, 209, 0.3);
+    }
+
+    /* Button Styles */
+    .btn-primary {
+        @apply px-4 py-2 sm:px-6 sm:py-3 bg-retro-teal/20 border-2 border-retro-teal text-retro-teal 
+               font-semibold hover:bg-retro-teal/30 transition-all text-sm sm:text-base
+               hover:shadow-[0_0_20px_rgba(0,255,209,0.5)];
+    }
+
+    .btn-secondary {
+        @apply px-4 py-2 sm:px-6 sm:py-3 border-2 border-retro-indigo text-retro-indigo 
+               font-semibold hover:bg-retro-indigo/10 transition-all text-sm sm:text-base
+               hover:shadow-[0_0_20px_rgba(99,102,241,0.5)];
+    }
+}
+
+@layer utilities {
+    /* Text Glow */
+    .text-glow {
+        text-shadow: 
+            0 0 10px currentColor,
+            0 0 20px currentColor,
+            0 0 30px currentColor;
+    }
+
+    /* Grain Texture */
+    .grain-texture {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+    }
+
+    /* Spaceship POV effect - text moving forward */
+    @keyframes float-text {
+        0%, 100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(-10px);
+            opacity: 0.9;
+        }
+    }
+
+    /* Parallax effect for hero content */
+    #hero-content {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        will-change: transform, opacity;
+    }
+
+    /* Space-themed transition animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateZ(-100px) scale(0.8);
+            filter: blur(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateZ(0) scale(1);
+            filter: blur(0);
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px) translateZ(-50px);
+            filter: blur(5px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0) translateZ(0);
+            filter: blur(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px) translateZ(-50px);
+            filter: blur(5px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0) translateZ(0);
+            filter: blur(0);
+        }
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.5) translateZ(-100px);
+            filter: blur(10px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateZ(0);
+            filter: blur(0);
+        }
+    }
+
+    @keyframes warpIn {
+        from {
+            opacity: 0;
+            transform: scale(0.3) translateZ(-200px);
+            filter: blur(20px) brightness(2);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.1) translateZ(-50px);
+            filter: blur(5px) brightness(1.5);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateZ(0);
+            filter: blur(0) brightness(1);
+        }
+    }
+
+    @keyframes starTrail {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px) translateZ(-100px);
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(100px) translateZ(100px);
+        }
+    }
+
+    @keyframes spaceGlow {
+        0%, 100% {
+            box-shadow: 
+                0 0 5px rgba(0, 255, 209, 0.5),
+                0 0 10px rgba(0, 255, 209, 0.3),
+                0 0 20px rgba(0, 255, 209, 0.1);
+        }
+        50% {
+            box-shadow: 
+                0 0 10px rgba(0, 255, 209, 0.8),
+                0 0 20px rgba(0, 255, 209, 0.5),
+                0 0 30px rgba(0, 255, 209, 0.3),
+                0 0 40px rgba(0, 255, 209, 0.1);
+        }
+    }
+
+    /* Page transition wrapper - space warp effect */
+    .page-transition {
+        animation: warpIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+
+    /* Staggered animation delays */
+    .animate-delay-100 {
+        animation-delay: 0.1s;
+    }
+
+    .animate-delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-delay-300 {
+        animation-delay: 0.3s;
+    }
+
+    .animate-delay-400 {
+        animation-delay: 0.4s;
+    }
+
+    .animate-delay-500 {
+        animation-delay: 0.5s;
+    }
+
+    /* Space-themed fade in animation */
+    .fade-in {
+        animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+        transform-style: preserve-3d;
+    }
+
+    /* Space-themed slide in animations */
+    .slide-in-left {
+        animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+        transform-style: preserve-3d;
+    }
+
+    .slide-in-right {
+        animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+        transform-style: preserve-3d;
+    }
+
+    /* Space-themed scale in animation */
+    .scale-in {
+        animation: warpIn 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+        transform-style: preserve-3d;
+    }
+
+    /* Star trail effect for links */
+    .star-trail {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .star-trail::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 255, 209, 0.3),
+            transparent
+        );
+        animation: starTrail 1.5s ease-in-out infinite;
+    }
+
+    /* Smooth transitions for all interactive elements */
+    a, button, input, textarea, select {
+        transition-property: color, background-color, border-color, opacity;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+    }
+
+    /* Smooth space-themed page transitions */
+    body {
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                    filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+    }
+
+    /* Warp effect on page navigation */
+    body.page-exit {
+        opacity: 0;
+        filter: blur(10px) brightness(0.5);
+        transform: scale(0.95);
+    }
+
+    /* Clean hover effects for links */
+    a {
+        transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    /* Navigation links hover - clean */
+    nav a:hover {
+        opacity: 1;
+    }
+
+    /* Button hover effects */
+    button:hover, .btn-primary:hover, .btn-secondary:hover {
+        opacity: 0.9;
+    }
+
+    a:active, button:active {
+        opacity: 0.7;
+    }
+
+    /* Remove any transform effects that might look bad */
+    a:hover {
+        transform: none;
+    }
+}
+

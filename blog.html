@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog by Rayhan - Articles on web development, technology, and coding insights.">
+    <title>Blog | Rayhan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="bg-dark-bg text-gray-100 antialiased page-transition">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-dark-surface/80 backdrop-blur-md border-b border-retro-teal/20">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-retro-teal font-pixel tracking-wider hover:text-retro-cyan transition-colors">
+                    &lt;RAYHAN/&gt;
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-retro-teal transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-retro-teal transition-colors">About</a>
+                    <a href="services.html" class="hover:text-retro-teal transition-colors">Services</a>
+                    <a href="projects.html" class="hover:text-retro-teal transition-colors">Projects</a>
+                    <a href="blog.html" class="text-retro-teal hover:text-retro-cyan transition-colors font-medium">Blog</a>
+                    <a href="contact.html" class="hover:text-retro-teal transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-toggle" class="md:hidden text-retro-teal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 hover:text-retro-teal transition-colors">Home</a>
+                <a href="about.html" class="block py-2 hover:text-retro-teal transition-colors">About</a>
+                <a href="services.html" class="block py-2 hover:text-retro-teal transition-colors">Services</a>
+                <a href="projects.html" class="block py-2 hover:text-retro-teal transition-colors">Projects</a>
+                <a href="blog.html" class="block py-2 text-retro-teal">Blog</a>
+                <a href="contact.html" class="block py-2 hover:text-retro-teal transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Section -->
+    <section class="section-container pt-32">
+        <div class="max-w-4xl mx-auto">
+            <!-- Page Header -->
+            <div class="text-center mb-16">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 font-pixel">
+                    <span class="text-retro-teal">B</span><span class="text-retro-cyan">L</span><span class="text-retro-emerald">O</span><span class="text-retro-indigo">G</span>
+                </h1>
+                <div class="inline-block px-6 py-2 border-2 border-retro-teal/50 bg-dark-surface/50 backdrop-blur-sm">
+                    <p class="text-lg text-retro-teal font-pixel">Thoughts & Insights</p>
+                </div>
+            </div>
+
+            <!-- Blog Posts -->
+            <div class="space-y-8">
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-2 text-retro-teal font-pixel">
+                                <span class="text-retro-teal">$</span> Building Scalable APIs with Node.js
+                            </h2>
+                            <p class="text-gray-400 text-sm font-pixel">2024-01-15 | 5 min read</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Exploring best practices for building robust, scalable RESTful APIs using Node.js and Express. 
+                        Learn about error handling, validation, rate limiting, and performance optimization techniques 
+                        that make your APIs production-ready.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-retro-teal/20 text-retro-teal text-xs border border-retro-teal/30">Node.js</span>
+                            <span class="px-2 py-1 bg-retro-indigo/20 text-retro-indigo text-xs border border-retro-indigo/30">API</span>
+                            <span class="px-2 py-1 bg-retro-emerald/20 text-retro-emerald text-xs border border-retro-emerald/30">Backend</span>
+                        </div>
+                        <a href="#" class="text-retro-teal hover:text-retro-cyan transition-colors font-semibold">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-2 text-retro-indigo font-pixel">
+                                <span class="text-retro-indigo">$</span> The Art of Retro Web Design
+                            </h2>
+                            <p class="text-gray-400 text-sm font-pixel">2024-01-10 | 7 min read</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        A deep dive into retro web aesthetics and how to blend 90s nostalgia with modern web standards. 
+                        Discover techniques for creating CRT effects, pixel-perfect borders, and neon glows that don't 
+                        compromise on accessibility or performance.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-retro-indigo/20 text-retro-indigo text-xs border border-retro-indigo/30">Design</span>
+                            <span class="px-2 py-1 bg-retro-purple/20 text-retro-purple text-xs border border-retro-purple/30">CSS</span>
+                            <span class="px-2 py-1 bg-retro-pink/20 text-retro-pink text-xs border border-retro-pink/30">Aesthetics</span>
+                        </div>
+                        <a href="#" class="text-retro-indigo hover:text-retro-purple transition-colors font-semibold">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-2 text-retro-emerald font-pixel">
+                                <span class="text-retro-emerald">$</span> Three.js for Interactive Web Experiences
+                            </h2>
+                            <p class="text-gray-400 text-sm font-pixel">2024-01-05 | 6 min read</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Getting started with Three.js to create stunning 3D web experiences. Learn the fundamentals 
+                        of WebGL, scene composition, lighting, and animations. Includes practical examples for adding 
+                        interactive 3D elements to your portfolio or web applications.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-retro-emerald/20 text-retro-emerald text-xs border border-retro-emerald/30">Three.js</span>
+                            <span class="px-2 py-1 bg-retro-teal/20 text-retro-teal text-xs border border-retro-teal/30">WebGL</span>
+                            <span class="px-2 py-1 bg-retro-cyan/20 text-retro-cyan text-xs border border-retro-cyan/30">3D</span>
+                        </div>
+                        <a href="#" class="text-retro-emerald hover:text-retro-teal transition-colors font-semibold">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-2 text-retro-purple font-pixel">
+                                <span class="text-retro-purple">$</span> DevOps Best Practices for Small Teams
+                            </h2>
+                            <p class="text-gray-400 text-sm font-pixel">2023-12-28 | 8 min read</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Streamlining your development workflow with CI/CD pipelines, containerization, and automated 
+                        testing. Practical tips for small teams to implement DevOps practices without overwhelming 
+                        complexity or infrastructure costs.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-retro-purple/20 text-retro-purple text-xs border border-retro-purple/30">DevOps</span>
+                            <span class="px-2 py-1 bg-retro-pink/20 text-retro-pink text-xs border border-retro-pink/30">Docker</span>
+                            <span class="px-2 py-1 bg-retro-indigo/20 text-retro-indigo text-xs border border-retro-indigo/30">CI/CD</span>
+                        </div>
+                        <a href="#" class="text-retro-purple hover:text-retro-pink transition-colors font-semibold">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-2 text-retro-cyan font-pixel">
+                                <span class="text-retro-cyan">$</span> Building Accessible Web Applications
+                            </h2>
+                            <p class="text-gray-400 text-sm font-pixel">2023-12-20 | 6 min read</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Making the web accessible to everyone. Learn about WCAG guidelines, semantic HTML, ARIA 
+                        attributes, and testing tools. Discover how accessibility improvements benefit all users, 
+                        not just those with disabilities.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-1 bg-retro-cyan/20 text-retro-cyan text-xs border border-retro-cyan/30">Accessibility</span>
+                            <span class="px-2 py-1 bg-retro-teal/20 text-retro-teal text-xs border border-retro-teal/30">WCAG</span>
+                            <span class="px-2 py-1 bg-retro-emerald/20 text-retro-emerald text-xs border border-retro-emerald/30">UX</span>
+                        </div>
+                        <a href="#" class="text-retro-cyan hover:text-retro-teal transition-colors font-semibold">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center gap-4">
+                <button class="px-4 py-2 border-2 border-retro-teal/50 text-retro-teal hover:bg-retro-teal/10 transition-colors font-pixel">
+                    ← Previous
+                </button>
+                <button class="px-4 py-2 border-2 border-retro-teal/50 text-retro-teal hover:bg-retro-teal/10 transition-colors font-pixel">
+                    Next →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-surface border-t border-retro-teal/20 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm mb-4">&copy; 2024 Rayhan. Built with passion and precision.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-retro-teal/70 hover:text-retro-teal transition-colors">GitHub</a>
+                <a href="#" class="text-retro-teal/70 hover:text-retro-teal transition-colors">LinkedIn</a>
+                <a href="#" class="text-retro-teal/70 hover:text-retro-teal transition-colors">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
+
