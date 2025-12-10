@@ -1,6 +1,25 @@
 {
-  "cleanUrls": false,
   "rewrites": [
+    {
+      "source": "/about.html",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/projects.html",
+      "destination": "/projects.html"
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact.html"
+    },
     {
       "source": "/about",
       "destination": "/about.html"
@@ -24,16 +43,7 @@
   ],
   "headers": [
     {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(html|js|css))",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
