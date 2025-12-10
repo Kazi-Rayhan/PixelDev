@@ -203,3 +203,114 @@ document.addEventListener('DOMContentLoaded', () => {
     animateParallax();
 });
 
+// Astronaut character controller
+document.addEventListener('DOMContentLoaded', () => {
+    const astronaut = document.getElementById('astronaut');
+    const astronautSprite = document.getElementById('astronaut-sprite');
+    if (!astronaut || !astronautSprite) return;
+
+    const animations = {
+        idle: './assets/patterns/astronut/jade-guilbot-astronaute-idle-gif.gif',
+        walk: './assets/patterns/astronut/jade-guilbot-astronaute-walk-gif.gif',
+        jump: './assets/patterns/astronut/jade-guilbot-astronaute-jump-gif.gif',
+        dash: './assets/patterns/astronut/jade-guilbot-astronaute-dash-gif.gif',
+        death: './assets/patterns/astronut/jade-guilbot-astronaute-death-gif.gif'
+    };
+
+    let currentState = 'walk';
+    let isInteracting = false;
+    let walkCycle = 0;
+    let idleTimeout = null;
+
+    // Set animation based on state
+    function setAnimation(state) {
+        currentState = state;
+        astronautSprite.src = animations[state] || animations.walk;
+        
+        // Remove all state classes
+        astronaut.classList.remove('idle', 'jumping');
+        
+        // Apply state-specific class and behavior
+        switch(state) {
+            case 'idle':
+                astronaut.classList.add('idle');
+                astronaut.style.animationPlayState = 'paused';
+                break;
+            case 'jump':
+                astronaut.classList.add('jumping');
+                astronaut.style.animationPlayState = 'paused';
+                setTimeout(() => {
+                    if (currentState === 'jump') {
+                        setAnimation('walk');
+                    }
+                }, 1000); // Jump animation duration
+                break;
+            case 'walk':
+            default:
+                astronaut.style.animationDuration = '20s';
+                astronaut.style.animationPlayState = 'running';
+                astronaut.style.opacity = '1';
+                break;
+        }
+    }
+
+    // Random idle state
+    function randomIdle() {
+        if (currentState === 'walk' && !isInteracting && Math.random() < 0.3) {
+            setAnimation('idle');
+            // Return to walking after random time
+            const idleDuration = 2000 + Math.random() * 3000;
+            idleTimeout = setTimeout(() => {
+                if (currentState === 'idle') {
+                    setAnimation('walk');
+                }
+            }, idleDuration);
+        }
+    }
+
+    // Click handler - random action
+    astronaut.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent triggering other click handlers
+        
+        if (isInteracting) return; // Prevent multiple clicks during animation
+        isInteracting = true;
+
+        // Random action: jump
+        const action = 'jump';
+
+        setAnimation(action);
+
+        // Reset interaction flag after animation
+        setTimeout(() => {
+            isInteracting = false;
+        }, 2000);
+    });
+
+    // Reset astronaut position when animation completes
+    astronaut.addEventListener('animationiteration', () => {
+        if (currentState === 'walk') {
+            walkCycle++;
+            // Occasionally change speed or add variation
+            if (walkCycle % 3 === 0) {
+                const newDuration = 18 + Math.random() * 4;
+                astronaut.style.animationDuration = `${newDuration}s`;
+            }
+            
+            // Random idle chance
+            if (Math.random() < 0.1) {
+                randomIdle();
+            }
+        }
+    });
+
+    // Random idle check every few seconds
+    setInterval(() => {
+        if (currentState === 'walk' && !isInteracting) {
+            randomIdle();
+        }
+    }, 5000);
+
+    // Initial state
+    setAnimation('walk');
+});
+

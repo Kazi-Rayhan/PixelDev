@@ -474,5 +474,42 @@
     a:hover {
         transform: none;
     }
+
+    /* Astronaut character animation */
+    #astronaut {
+        animation: astronautWalk 20s linear infinite;
+        will-change: transform;
+        transition: transform 0.3s ease;
+    }
+
+    @keyframes astronautWalk {
+        0% {
+            transform: translateX(-150px);
+        }
+        100% {
+            transform: translateX(calc(100vw + 150px));
+        }
+    }
+
+    /* Astronaut sprite states */
+    #astronaut-sprite {
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+        filter: drop-shadow(0 0 10px rgba(0, 255, 209, 0.5));
+        transition: filter 0.3s ease;
+    }
+
+    /* Astronaut interaction states */
+    #astronaut.idle {
+        animation-play-state: paused;
+    }
+
+    #astronaut.jumping {
+        animation-play-state: paused;
+        transform: translateY(-50px);
+    }
+
+
 }
 
